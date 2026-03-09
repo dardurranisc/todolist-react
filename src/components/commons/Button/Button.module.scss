@@ -1,0 +1,15 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins/visual";
+
+.button {
+  padding: 10px 15px;
+  border-radius: 10px;
+  background: $black;
+  color:$white;
+  @include cursor;
+
+  &:hover {
+    background: $white;
+    color:$black;
+  }
+}

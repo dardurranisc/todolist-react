@@ -1,0 +1,23 @@
+@import "variables.scss";
+
+* {
+  overflow-wrap: break-word; 
+  box-sizing:border-box;
+}
+
+body {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+li {
+  list-style:none;
+  width: 100%;
+}
+
+a {
+  color:$black;
+  text-decoration:none;
+}
+

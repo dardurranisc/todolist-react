@@ -1,0 +1,38 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/mixins/visual";
+
+
+.form__list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  background: $grey-50;
+  @include cursor;
+
+  &:hover {
+    outline:1px solid $black;
+    background: $white;
+  }
+
+  span {
+    flex-grow:1;
+    padding: 0 10px;
+    overflow: hidden;
+    @include cursor;
+  }
+
+  .completed {
+    text-decoration: line-through;
+  }
+  
+  input[type="text"] {
+    flex-grow:1;
+    padding:10px;
+    border: 1px solid $black;
+    border-radius:10px;
+  }
+}

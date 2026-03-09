@@ -1,0 +1,27 @@
+{
+  "name": "todolist-react",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "biome check --write .",
+    "format": "biome format --write .",
+    "check": "biome ci ."
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "next": "16.1.4",
+    "react": "19.2.3",
+    "react-dom": "19.2.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.6",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "sass": "^1.97.3",
+    "typescript": "^5"
+  }
+}
