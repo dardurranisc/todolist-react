@@ -55,11 +55,12 @@ const ToDoItem = ({
   };
 
   return (
-    <li className={styles.form__list}>
+    <li className={styles.li}>
       <input checked={completed} onChange={onSwitch} type="checkbox" />
       {isEditing ? (
         <input
           ref={inputRef}
+          className={styles.inputEdit}
           type="text"
           value={editText}
           onChange={(e) => setEditText(e.target.value)}
@@ -67,12 +68,13 @@ const ToDoItem = ({
           onKeyDown={handleKeyDown}
         />
       ) : (
-        <span
-          className={clsx({ [styles.completed]: completed })}
+        <button
+          type="button"
+          className={clsx(styles.button, { [styles.completed]: completed })}
           onDoubleClick={handleDoubleClick}
         >
           {text}
-        </span>
+        </button>
       )}
       <Button text="Удалить" onClick={onDelete}></Button>
     </li>

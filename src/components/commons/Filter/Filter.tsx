@@ -1,30 +1,27 @@
 import clsx from "clsx";
-
+import type { FilterStatus } from "@/types/todo";
+import Button from "../Button";
 import { filterData } from "./constans/filterData";
 
 import styles from "./Filter.module.scss";
 
 interface FilterProps {
   currentFilter: string;
-  onFilterChange: (filter: string) => void;
+  onFilterChange: (filter: FilterStatus) => void;
 }
 
 const Filter = ({ currentFilter, onFilterChange }: FilterProps) => {
   return (
     <ul className={styles.filter}>
       {filterData.map((link) => (
-        <li className={styles.filter__link} key={link.id}>
-          <a
-            href={link.href}
+        <li key={link.id}>
+          <Button
             id={link.id}
+            text={link.text}
+            variant="buttonFilter"
             className={clsx({ [styles.selected]: currentFilter === link.id })}
-            onClick={(e) => {
-              e.preventDefault();
-              onFilterChange(link.id);
-            }}
-          >
-            {link.text}
-          </a>
+            onClick={() => onFilterChange(link.id)}
+          />
         </li>
       ))}
     </ul>

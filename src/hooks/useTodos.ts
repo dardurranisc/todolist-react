@@ -1,10 +1,10 @@
 import { useMemo, useState } from "react";
-import type { ToDo } from "@/types/todo";
+import type { FilterStatus, ToDo } from "@/types/todo";
 import useLocalStorageTodo from "./useLocalStorageTodo";
 
 const useTodos = () => {
   const [todos, setTodos] = useLocalStorageTodo<ToDo[]>("todos", []);
-  const [filterStatus, setFilterStatus] = useState("all");
+  const [filterStatus, setFilterStatus] = useState<FilterStatus>("all");
 
   const addTask = (value: string) => {
     const newTask: ToDo = {
@@ -16,7 +16,7 @@ const useTodos = () => {
   };
 
   const deleteTask = (id: number) => {
-    setTodos((deleted) => deleted.filter((todo) => todo.id !== id));
+    setTodos((prev) => prev.filter((todo) => todo.id !== id));
   };
 
   const editTask = (id: number, newText: string) => {
@@ -38,15 +38,14 @@ const useTodos = () => {
   }, [todos]);
 
   const filteredTasks = useMemo(() => {
-    return todos.filter((todo) => {
-      if (filterStatus === "active") {
-        return !todo.completed;
-      } else if (filterStatus === "completed") {
-        return todo.completed;
-      } else {
-        return true;
-      }
-    });
+    switch (filterStatus) {
+      case "active":
+        return todos.filter((todo) => !todo.completed);
+      case "completed":
+        return todos.filter((todo) => todo.completed);
+      default:
+        return todos;
+    }
   }, [todos, filterStatus]);
 
   const selectAll = () => {

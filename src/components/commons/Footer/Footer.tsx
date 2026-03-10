@@ -2,12 +2,14 @@ import Button from "@components/Button";
 import Count from "@components/Count/Count";
 import Filter from "@components/Filter";
 
+import type { FilterStatus } from "@/types/todo";
+
 import styles from "./Footer.module.scss";
 
 interface FooterProps {
   filterStatus: string;
   activeCount: number;
-  onFilterChange: (status: string) => void;
+  onFilterChange: (status: FilterStatus) => void;
   selectAll: () => void;
   clearCompleted: () => void;
 }
@@ -20,7 +22,7 @@ const Footer = ({
   clearCompleted,
 }: FooterProps) => {
   return (
-    <footer className={styles.footer} id="footer">
+    <footer className={styles.footer}>
       <Count count={activeCount} />
       <Filter currentFilter={filterStatus} onFilterChange={onFilterChange} />
       <Button text="Выбрать все" onClick={selectAll} />

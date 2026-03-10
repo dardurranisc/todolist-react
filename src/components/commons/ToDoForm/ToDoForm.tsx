@@ -12,9 +12,9 @@ interface ToDoFormProps {
 
 const ToDoForm = ({ todos, onDeleteTodo, onEdit, toggle }: ToDoFormProps) => {
   return (
-    <main className={styles.form}>
-      <ul className={styles.form__lists}>
-        {todos.length === 0 ? (
+    <main>
+      <ul className={styles.form}>
+        {!todos.length ? (
           <li>Здесь пока пусто</li>
         ) : (
           todos.map((task) => (

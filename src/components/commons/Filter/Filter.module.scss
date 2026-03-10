@@ -5,21 +5,12 @@
   gap: 15px;
   margin: 0;
   padding: 0;
+}
 
-  &__link a {
-    padding: 8px 16px;
-    border: 1px solid $grey-200;
-    border-radius: 20px;
-  }
-
-  &__link a.selected {
+.selected {
     border:none;
-  }
-
-  &__link .selected {
     background-color:$black;
     color:$white;
-  }
 }
 
 

@@ -28,13 +28,13 @@ const Header = ({ onAddTodo }: HeaderProps) => {
       <h1>ToDoList</h1>
       <input
         value={inputValue}
-        className={styles.header__input}
+        className={styles.input}
         type="text"
         placeholder="Введите задачу"
         onChange={(e) => setInputValue(e.target.value)}
         onKeyDown={handleKeyPress}
       />
-      <Button text="Добавить задачу" id="btn-add" onClick={handleAdd} />
+      <Button text="Добавить задачу" onClick={handleAdd} />
     </header>
   );
 };

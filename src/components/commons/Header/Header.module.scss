@@ -4,15 +4,15 @@
 .header {
   margin-bottom: 20px;
   text-align: center;
+}
 
-  &__input {
-    margin-right:7px;
-    padding: 10px 15px;
-    border: 1px solid $black;
-    border-radius: 10px;
-    background-color:$white;
-    color:$black;
-    @include cursor;
-  }
+.input {
+  margin-right:7px;
+  padding: 10px 15px;
+  border: 1px solid $black;
+  border-radius: 10px;
+  background-color:$white;
+  color:$black;
+  @include cursor;
 }
 

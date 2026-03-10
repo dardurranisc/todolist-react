@@ -2,7 +2,7 @@
 @import "../../../../styles/mixins/visual";
 
 
-.form__list {
+.li {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -17,22 +17,27 @@
     outline:1px solid $black;
     background: $white;
   }
-
-  span {
-    flex-grow:1;
-    padding: 0 10px;
-    overflow: hidden;
-    @include cursor;
-  }
-
-  .completed {
-    text-decoration: line-through;
-  }
-  
-  input[type="text"] {
-    flex-grow:1;
-    padding:10px;
-    border: 1px solid $black;
-    border-radius:10px;
-  }
 }
+
+.inputEdit {
+  flex-grow:1;
+  padding:10px;
+  border: 1px solid $black;
+  border-radius:10px;
+}
+
+.button {         
+  flex-grow: 1;
+  width: 100%;
+  padding: 0 10px;
+  border: none;
+  text-align: left;
+  overflow: hidden;
+  background-color: transparent;
+  @include cursor;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
