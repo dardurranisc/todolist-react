@@ -6,7 +6,7 @@
 
 ## Демо
 - https://todolist-react-delta-woad.vercel.app/
-- [Репозиторий](https://github.com/username/todo-list-react)](https://github.com/dardurranisc/todolist-react)
+- https://github.com/dardurranisc/todolist-react
 
 ## Стек
 - React
