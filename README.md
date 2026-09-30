@@ -1,40 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Todo List на React/Redux
 
-## Getting Started
+Учебный проект по React и Redux. Приложение «Список дел», аналогичное заданию  
+из базовой стажировки, но реализованное с использованием React и Redux.  
+Данные сохраняются в LocalStorage.
 
-First, run the development server:
+## Демо
+- https://todolist-react-delta-woad.vercel.app/
+- [Репозиторий](https://github.com/username/todo-list-react)](https://github.com/dardurranisc/todolist-react)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Стек
+- React
+- Redux
+- React Redux (хуки `useSelector`, `useDispatch`)
+- SCSS / CSS Modules
+- LocalStorage
+- JavaScript (ES6+)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Функционал
+- Добавление новой задачи
+- Редактирование задачи
+- Удаление задачи
+- Отметка задачи как выполненной
+- Фильтрация: все / активные / выполненные
+- Сохранение задач в LocalStorage
+- Сохранение состояния фильтра
+- Валидация ввода (пустая задача не добавляется)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+## Архитектура
+- **Store** — единое хранилище состояния Redux.
+- **Actions** — описания действий: добавление, редактирование, удаление, переключение статуса, смена фильтра.
+- **Reducers** — чистые функции, обрабатывающие actions и возвращающие новое состояние.
+- **Components** — функциональные компоненты с хуками.
+- **LocalStorage** — синхронизация состояния с хранилищем браузера.
